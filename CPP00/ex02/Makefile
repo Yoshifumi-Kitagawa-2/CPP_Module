@@ -5,30 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/10/08 20:32:33 by yokitaga          #+#    #+#              #
-#    Updated: 2023/12/12 00:10:09 by yokitaga         ###   ########.fr        #
+#    Created: 2023/12/12 00:22:10 by yokitaga          #+#    #+#              #
+#    Updated: 2023/12/12 00:22:11 by yokitaga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CXX = g++
-CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
-
-SRCS = Phonebook.cpp Contact.cpp main.cpp
-OBJS = $(SRCS:.cpp=.o)
-EXEC = phonebook
-
-all: $(EXEC)
-
-$(EXEC): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $(EXEC) $(OBJS)
-
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $<
-
-clean:
-	rm -f $(OBJS)
-
-fclean: clean
-	rm -f $(EXEC)
-
-re: fclean all

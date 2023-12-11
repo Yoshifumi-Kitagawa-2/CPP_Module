@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 17:00:16 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/12/05 00:13:34 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/12/11 23:51:01 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,9 @@ private:
 public:
 	Contact();
 	~Contact();
-	void	init(void);
-	void    setIndex(int index);
-	void    view(int index) const;
-    void    display(int index) const;
-}
+	void	initForAddContact(void);
+	void    setIndexForAdd(int index);
+    void    display() const;
+};
 
 #endif

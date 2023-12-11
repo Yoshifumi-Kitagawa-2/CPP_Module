@@ -6,11 +6,11 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 00:04:03 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/12/05 00:23:39 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/12/12 00:12:54 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <PhoneBook.hpp>
+#include "PhoneBook.hpp"
 
 int	main()
 {
@@ -20,7 +20,8 @@ int	main()
 	input = "";
 	while (input != "EXIT")
 	{
-		std::cout << "Please enter ADD, SEARCH or EXIT." << std::endl;
+		std::cout << "=============Please enter ADD, SEARCH or EXIT.=============" << std::endl;
+		std::cout << "> ";
 		std::cin >> input;
 		if (input == "ADD")
 			phonebook.add();
