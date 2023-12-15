@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 19:12:01 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/10/08 20:30:57 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/12/14 19:13:07 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #include <string>
 #include <cctype>
 
-int main(int argc, char* argv[]){
+int main(int argc, char* argv[])
+{
 	if (argc == 1){
 		std::cerr << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 		return 1;
