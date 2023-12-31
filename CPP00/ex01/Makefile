@@ -6,11 +6,11 @@
 #    By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/08 20:32:33 by yokitaga          #+#    #+#              #
-#    Updated: 2023/12/12 00:10:09 by yokitaga         ###   ########.fr        #
+#    Updated: 2023/12/31 16:03:31 by yokitaga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CXX = g++
+CXX = c++
 CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
 
 SRCS = Phonebook.cpp Contact.cpp main.cpp
