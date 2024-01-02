@@ -6,13 +6,13 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/31 18:50:31 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/01 02:05:09 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/02 23:26:01 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-//===========================contructor/destructor=============================
+//constructor&destructor
 Fixed::Fixed()
 {
 	this->_fixedPointValue = 0;
@@ -44,9 +44,103 @@ Fixed::~Fixed()
 {
 }
 
+//comparisonOperator
+bool Fixed::comparisonOperatorBigger(const Fixed &right) const
+{
+	if (this->_fixedPointValue > right.getRawBits())
+		return (true);
+	return (false);
+}
+
+bool Fixed::comparisonOperatorSmaller(const Fixed &right) const
+{
+	if (this->_fixedPointValue < right.getRawBits())
+		return (true);
+	return (false);
+}
+
+bool Fixed::comparisonOperatorBiggerAndEqual(const Fixed &right) const
+{
+	if (this->_fixedPointValue >= right.getRawBits())
+		return (true);
+	return (false);
+}
+
+bool Fixed::comparisonOperatorSmallerAndEqual(const Fixed &right) const
+{
+	if (this->_fixedPointValue <= right.getRawBits())
+		return (true);
+	return (false);
+}
+
+bool Fixed::comparisonOperatorEqual(const Fixed &right) const
+{
+	if (this->_fixedPointValue == right.getRawBits())
+		return (true);
+	return (false);
+}
+
+bool Fixed::comparisonOperatorNotEqual(const Fixed &right) const
+{
+	if (this->_fixedPointValue != right.getRawBits())
+		return (true);
+	return (false);
+}
+
+//arithmeticOperator
+
+Fixed Fixed::arithmeticOperatorPlus(const Fixed &right) const
+{
+	return (Fixed(this->toFloat() + right.toFloat()));
+}
+
+Fixed Fixed::arithmeticOperatorMinus(const Fixed &right) const
+{
+	return (Fixed(this->toFloat() - right.toFloat()));
+}
+
+Fixed Fixed::arithmeticOperatorTimes(const Fixed &right) const
+{
+	return (Fixed(this->toFloat() * right.toFloat()));
+}
+
+Fixed Fixed::arithmeticOperatorDivision(const Fixed &right) const
+{
+	return (Fixed(this->toFloat() / right.toFloat()));
+}
+
+//preIncrementOperator
+Fixed &Fixed::preIncrementOperator++(void)
+{
+	this->_fixedPointValue++;
+	return (*this);
+}
+
+//postIncrementOperator
+Fixed Fixed::postIncrementOperator++(int)
+{
+	Fixed tmp(*this);
+	this->_fixedPointValue++;
+	return (tmp);
+}
+
+//preDecrementOperator
+Fixed &Fixed::preDecrementOperator--(void)
+{
+	this->_fixedPointValue--;
+	return (*this);
+}
+
+//postDecrementOperator
+Fixed Fixed::postDecrementOperator--(int)
+{
+	Fixed tmp(*this);
+	this->_fixedPointValue--;
+	return (tmp);
+}
+
 int Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (this->_fixedPointValue);
 }
 
