@@ -6,14 +6,14 @@
 #    By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/31 18:50:41 by yokitaga          #+#    #+#              #
-#    Updated: 2023/12/31 20:16:27 by yokitaga         ###   ########.fr        #
+#    Updated: 2024/01/03 00:22:52 by yokitaga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX = c++
 CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
 
-SRCS = main.cpp Fixed.cpp
+SRCS = main.cpp Fixed.cpp Point.cpp bsp.cpp
 OBJS = $(SRCS:.cpp=.o)
 EXEC = a.out
 

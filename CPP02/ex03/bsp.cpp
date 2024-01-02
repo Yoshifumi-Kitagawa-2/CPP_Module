@@ -6,13 +6,13 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 00:04:02 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/03 00:19:22 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/03 00:22:28 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
-bool	bsq(Point const a, Point const b, Point const c, Point const point)
+bool	bsp(Point const a, Point const b, Point const c, Point const point)
 {
 	if (a.isSame(point) || b.isSame(point) || c.isSame(point))
 		return (false);
