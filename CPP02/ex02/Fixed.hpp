@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/31 18:50:34 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/02 13:13:12 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/02 23:55:32 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,23 +27,27 @@ class Fixed {
 		Fixed &operator=(const Fixed &right);
 		~Fixed();
 
-		bool comparisonOperatorBigger(const Fixed &right) const;
-		bool comparisonOperatorSmaller(const Fixed &right) const;
-		bool comparisonOperatorBiggerAndEqual(const Fixed &right) const;
-		bool comparisonOperatorSmallerAndEqual(const Fixed &right) const;
-		bool comparisonOperatorEqual(const Fixed &right) const;
-		bool comparisonOperatorNotEqual(const Fixed &right) const;
+		bool	operator>(const Fixed &right) const;
+		bool	operator<(const Fixed &right) const;
+		bool	operator>=(const Fixed &right) const;
+		bool	operator<=(const Fixed &right) const;
+		bool	operator==(const Fixed &right) const;
+		bool	operator!=(const Fixed &right) const;
 
-		Fixed arithmeticOperatorPlus(const Fixed &right) const;
-		Fixed arithmeticOperatorMinus(const Fixed &right) const;
-		Fixed arithmeticOperatorTimes(const Fixed &right) const;
-		Fixed arithmeticOperatorDivision(const Fixed &right) const;
+		Fixed 	operator+(const Fixed &right) const;
+		Fixed 	operator-(const Fixed &right) const;
+		Fixed 	operator*(const Fixed &right) const;
+		Fixed 	operator/(const Fixed &right) const;
 
-		Fixed &preIncrementOperator++(void);
-		Fixed postIncrementOperator++(int);
-		Fixed &preDecrementOperator--(void);
-		Fixed postDecrementOperator--(int);
+		Fixed&	operator++(void);
+		Fixed 	operator++(int);
+		Fixed&	operator--(void);
+		Fixed 	operator--(int);
 
+		static Fixed &min(Fixed &left, Fixed &right);
+		static const Fixed &min(const Fixed &left, const Fixed &right);
+		static Fixed &max(Fixed &left, Fixed &right);
+		static const Fixed &max(const Fixed &left, const Fixed &right);
 		int getRawBits(void) const;
 		void setRawBits(int const raw);
 		float toFloat(void) const;
