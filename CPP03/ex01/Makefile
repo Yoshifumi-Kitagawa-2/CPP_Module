@@ -6,14 +6,14 @@
 #    By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/03 00:27:27 by yokitaga          #+#    #+#              #
-#    Updated: 2024/01/03 16:14:24 by yokitaga         ###   ########.fr        #
+#    Updated: 2024/01/03 17:21:46 by yokitaga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX = c++
 CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
 
-SRCS = main.cpp ClapTrap.cpp
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp
 OBJS = $(SRCS:.cpp=.o)
 EXEC = a.out
 
