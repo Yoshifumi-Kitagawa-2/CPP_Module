@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/03 00:27:16 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/03 18:01:41 by yokitaga         ###   ########.fr       */
+/*   Created: 2024/01/03 17:28:03 by yokitaga          #+#    #+#             */
+/*   Updated: 2024/01/03 18:00:33 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-int main() {
-	FragTrap a("Max");
+#include "ClapTrap.hpp"
 
-	a.attack("Jasmine");
-	a.ClapTrap::attack("Jasmine");
-	a.takeDamage(3);
-	a.beRepaired(10);
-	a.highFivesGuys();
-	return 0;
-}
+class	FragTrap : public ClapTrap {
+	public:
+		FragTrap(std::string name);
+		~FragTrap();
+		void	attack(std::string const &target);
+		void	highFivesGuys(void);
+};
+
+#endif
