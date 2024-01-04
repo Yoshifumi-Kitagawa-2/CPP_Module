@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 17:28:03 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/03 18:00:33 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/04 23:48:59 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class	FragTrap : public ClapTrap {
+class	FragTrap : virtual public ClapTrap {
 	public:
 		FragTrap(std::string name);
 		~FragTrap();
