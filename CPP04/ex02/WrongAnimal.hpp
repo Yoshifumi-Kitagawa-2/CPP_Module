@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 00:13:38 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/05 16:25:33 by yokitaga         ###   ########.fr       */
+/*   Created: 2024/01/05 00:12:35 by yokitaga          #+#    #+#             */
+/*   Updated: 2024/01/05 15:35:29 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "WrongCat.hpp"
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
-int main()
-{
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
-	//wrongAnimal/catのテストを追加
-	return 0;
-}
+# include <iostream>
+
+class WrongAnimal {
+	protected:
+		std::string _type;
+	public:
+		WrongAnimal();
+		WrongAnimal(std::string type);
+		WrongAnimal(const Animal &src);
+		WrongAnimal &operator=(const Animal &right);
+		~WrongAnimal();
+		std::string getType() const;
+		virtual void makeSound() const;
+};
+
+#endif

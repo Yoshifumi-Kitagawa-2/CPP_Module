@@ -1,52 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 14:45:17 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/05 16:24:07 by yokitaga         ###   ########.fr       */
+/*   Created: 2024/01/05 00:13:34 by yokitaga          #+#    #+#             */
+/*   Updated: 2024/01/05 15:24:45 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Animal.hpp"
 
-Cat::Cat() : Animal("Cat") {
+Animal::Animal() : _type("Animal") {
 	std::cout << _type << " constructor called " << std::endl;
-	try {
-		_brain = new Brain();
-	}
-	catch (std::bad_alloc &e) {
-		std::cout << e.what() << std::endl;
-	}
 }
 
-Cat::Cat(Cat const &src) : Animal(src) {
+Animal::Animal(std::string type) : _type(type) {
+	std::cout << _type << " constructor called " << std::endl;
+}
+
+Animal::Animal(const Animal &src) {
 	std::cout << _type << " copy constructor called " << std::endl;
 	*this = src;
 }
 
-Cat &Cat::operator=(Cat const &right) {
-	std::cout << "Cat assignation operator called" << std::endl;
+Animal &Animal::operator=(const Animal &right) {
+	std::cout << _type << " assignation operator called " << std::endl;
 	if (this != &right)
-	{
 		_type = right._type;
-		delete _brain;
-		try {
-			_brain = new Brain(*right._brain);
-		}
-		catch (std::bad_alloc &e) {
-			std::cout << e.what() << std::endl;
-		}
-	}
 	return (*this);
 }
 
-Cat::~Cat() {
-	std::cout << _type << " destructor called " << std::endl;
+Animal::~Animal() {
+	std::cout << "Animal destructor called " << std::endl;
 }
 
-void Cat::makeSound() const {
-	std::cout << "meow! meow!" << std::endl;
+std::string Animal::getType() const {
+	return (_type);
+}
+
+void Animal::makeSound() const {
+	std::cout << "Animal makeSound called " << std::endl;
 }
