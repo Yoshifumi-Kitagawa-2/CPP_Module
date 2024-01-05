@@ -6,16 +6,16 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:45:21 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/05 16:23:29 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/05 17:43:36 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CAT_HPP
 # define CAT_HPP
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
-class Cat : public Animal {
+class Cat : public AAnimal {
 	private:
 		Brain *_brain;
 	public:

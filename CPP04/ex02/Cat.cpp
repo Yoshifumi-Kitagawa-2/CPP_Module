@@ -6,13 +6,13 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:45:17 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/05 16:24:07 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/05 17:44:02 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal("Cat") {
+Cat::Cat() : AAnimal("Cat") {
 	std::cout << _type << " constructor called " << std::endl;
 	try {
 		_brain = new Brain();
@@ -22,7 +22,7 @@ Cat::Cat() : Animal("Cat") {
 	}
 }
 
-Cat::Cat(Cat const &src) : Animal(src) {
+Cat::Cat(Cat const &src) : AAnimal(src) {
 	std::cout << _type << " copy constructor called " << std::endl;
 	*this = src;
 }
