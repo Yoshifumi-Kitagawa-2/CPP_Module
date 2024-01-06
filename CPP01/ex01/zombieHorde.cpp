@@ -6,22 +6,22 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 18:17:47 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/12/17 18:31:39 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/06 20:16:30 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie  *zombieHorde( int N, std::string name )
+Zombie  *zombieHorde( int num, std::string name )
 {
 	Zombie	*zombie;
 	int		i;
 
-	zombie = new Zombie[N];
+	zombie = new Zombie[num];
 	i = 0;
-	while (i < N)
+	while (i < num)
 	{
-		zombie[i].set_name(name);
+		zombie[i].setName(name);
 		i++;
 	}
 	return (zombie);

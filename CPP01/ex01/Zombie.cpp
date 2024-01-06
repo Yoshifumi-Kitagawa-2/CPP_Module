@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 18:17:38 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/12/17 18:44:00 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/06 20:14:28 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	Zombie::announce(void)
 	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
-void	Zombie::set_name(std::string name)
+void	Zombie::setName(std::string name)
 {
 	this->_name = name;
 }

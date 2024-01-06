@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:44:28 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/12/17 18:12:18 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/06 20:17:38 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,12 @@
 
 class Zombie
 {
-private:
-	std::string	_name;
-public:
-	Zombie(std::string name);
-	~Zombie();
-	void	announce(void);
-	void	randomChump(std::string name);
+	private:
+		std::string	_name;
+	public:
+		Zombie(std::string name);
+		~Zombie();
+		void	announce(void);
 };
 
 Zombie  *newZombie( std::string name );
