@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 20:32:43 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/12/11 23:57:33 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/06 17:41:30 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ public:
 	PhoneBook();
 	~PhoneBook();
 	void	add();
+	int		getLastIndex()const;
+	void	displayAll()const;
 	void	search()const;
 	void	exit()const;
 };

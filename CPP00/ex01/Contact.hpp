@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 17:00:16 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/12/11 23:51:01 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/06 17:41:08 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,11 @@ private:
 public:
 	Contact();
 	~Contact();
-	void	initForAddContact(void);
-	void    setIndexForAdd(int index);
-    void    display() const;
+	std::string	getFirstName()const;
+	void		initForAddContact(void);
+	void    	setIndexForAdd(int index);
+	void		displayInstant(int index)const;
+    void    	displayDetail() const;
 };
 
 #endif
