@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 00:04:03 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/12/12 00:12:54 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/06 16:38:32 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main()
 		else if (input == "EXIT")
 			phonebook.exit();
 		else
-			std::cout << "Invalid input." << std::endl;
+			std::cout << "Invalid input. Please retry." << std::endl;
 	}
 	return (0);
 }
