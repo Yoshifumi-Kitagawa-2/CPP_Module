@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:44:26 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/12/17 18:02:39 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/06 19:25:55 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,4 @@ Zombie::~Zombie()
 void	Zombie::announce(void)
 {
 	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
-
-void	Zombie::randomChump(std::string name)
-{
-	Zombie	zombie(name);
-	zombie.announce();
 }

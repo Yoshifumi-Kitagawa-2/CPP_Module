@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 18:17:47 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/12/17 18:31:39 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/06 20:20:49 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Zombie  *zombieHorde( int N, std::string name )
 	i = 0;
 	while (i < N)
 	{
-		zombie[i].set_name(name);
+		zombie[i].setName(name);
 		i++;
 	}
 	return (zombie);
