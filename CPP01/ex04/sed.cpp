@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/31 16:09:32 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/12/31 17:54:23 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/07 15:32:54 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void sed::replace(std::string s1, std::string s2)
 	
 	std::string allContent;
 	std::getline(ifs, allContent, '\0');
-    size_t pos;
+    size_t pos;//posにはs1の最初の文字が見つかった位置が入る。nposはみつからなかったときの定数
     while ((pos = allContent.find(s1)) != std::string::npos) {
         allContent.erase(pos, s1.length());
 		allContent.insert(pos, s2);

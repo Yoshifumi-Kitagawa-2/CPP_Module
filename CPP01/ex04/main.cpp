@@ -6,12 +6,13 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/31 16:08:02 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/12/31 17:40:37 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/07 15:19:58 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sed.hpp"
 
+//ex)./sed test.txt a b
 int main(int argc, char **argv)
 {
 	if (argc != 4)
