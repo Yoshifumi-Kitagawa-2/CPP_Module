@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/31 18:50:31 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/12/31 20:38:37 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/07 23:49:00 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ int Fixed::toInt(void) const
 	return (this->_fixedPointValue >> this->_fractionalBits);
 }
 
+//デフォではtoFLoat()の値を出力するようにしている
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed)
 {
 	out << fixed.toFloat();
