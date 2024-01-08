@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:45:33 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/08 19:39:33 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/08 22:58:30 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,7 @@
 
 Dog::Dog() : Animal("Dog") {
 	std::cout << "[" << _type << "] constructor called at Dog.cpp" << std::endl;
-	try {
-		_brain = new Brain();
-	}
-	catch (std::bad_alloc &e) {
-		std::cout << e.what() << std::endl;
-	}
+	_brain = new Brain();
 }
 
 Dog::Dog(Dog const &src) : Animal(src) {
@@ -31,12 +26,7 @@ Dog &Dog::operator=(Dog const &right) {
 	if (this != &right)
 	{
 		_type = right._type;
-		try {
-			_brain = new Brain(*right._brain);
-		}
-		catch (std::bad_alloc &e) {
-			std::cout << e.what() << std::endl;
-		}
+		_brain = new Brain(*right._brain);
 	}
 	std::cout << "[" << _type << "] assignation operator called at Dog.cpp" << std::endl;
 	return (*this);

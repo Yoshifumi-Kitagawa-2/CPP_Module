@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:45:17 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/08 19:54:22 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/08 22:59:08 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,7 @@
 
 Cat::Cat() : AAnimal("Cat") {
 	std::cout << "[" << _type << "] constructor called at Cat.cpp" << std::endl;
-	try {
-		_brain = new Brain();
-	}
-	catch (std::bad_alloc &e) {
-		std::cout << e.what() << std::endl;
-	}
+	_brain = new Brain();
 }
 
 Cat::Cat(Cat const &src) : AAnimal(src) {
@@ -31,12 +26,7 @@ Cat &Cat::operator=(Cat const &right) {
 	if (this != &right)
 	{
 		_type = right._type;
-		try {
-			_brain = new Brain(*right._brain);
-		}
-		catch (std::bad_alloc &e) {
-			std::cout << e.what() << std::endl;
-		}
+		_brain = new Brain(*right._brain);
 	}
 	std::cout << "[" << _type << "] assignation operator called at Cat.cpp" << std::endl;
 	return (*this);
