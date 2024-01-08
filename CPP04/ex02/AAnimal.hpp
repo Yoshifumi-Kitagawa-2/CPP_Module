@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 00:12:35 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/08 20:04:52 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/08 20:42:33 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class AAnimal {
 		AAnimal &operator=(const AAnimal &right);
 		virtual ~AAnimal();
 		std::string getType() const;
-		virtual void makeSound() const;
+		virtual void makeSound() const = 0;
 };
 
 #endif
