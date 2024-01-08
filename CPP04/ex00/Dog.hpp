@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:45:08 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/05 15:16:39 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/08 17:51:04 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,5 @@ class Dog : public Animal {
 		~Dog();
 		void makeSound() const;
 };
-
 
 #endif
