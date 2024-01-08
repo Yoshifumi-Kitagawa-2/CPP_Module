@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 00:30:11 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/08 15:55:24 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/08 16:23:16 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,25 +38,23 @@ ClapTrap::~ClapTrap() {
 
 void	ClapTrap::attack(std::string const &target) {
 	if (_energy_points == 0) {
-		std::cout << "[ClapTrap] " << _name << " has no energy points." << std::endl;
+		std::cout << "[ClapTrap] " << _name << " cannot attack because of no energy points." << std::endl;
 		return ;
 	}
 	_energy_points--;
-	std::cout << "[ClapTrap] " << _name << " attacks " << target << ", causing " << _attack_damage << " points of damage!" << std::endl;
-	std::cout << "[ClapTrap] " << _name << " has now " << _energy_points << " energy points." << std::endl;
+	std::cout << "[ClapTrap] " << _name << " attacks " << target << ", causing " << _attack_damage << " points of damage!" << _energy_points << " energy points left." << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount) {
 	if (_hit_points == 0) {
-		std::cout << "[ClapTrap] " << _name << " has no hit points." <<  _name << "is dead." << std::endl;
+		std::cout << "[ClapTrap] " << _name << " has no hit points." <<  _name << " is dead." << std::endl;
 		return ;
 	}
 	if (amount >= _hit_points)
 		_hit_points = 0;
 	else
 		_hit_points -= amount;
-	std::cout << "[ClapTrap] " << _name << " takes " << amount << " points of damage!" << std::endl;
-	std::cout << "[ClapTrap] " << _name << " has now " << _hit_points << " hit points." << std::endl;	
+	std::cout << "[ClapTrap] " << _name << " takes " << amount << " points of damage!" << _hit_points << " hit points left." << std::endl;	
 }
 
 void	ClapTrap::beRepaired(unsigned int amount) {
@@ -71,6 +69,5 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 	_hit_points += amount;
 	_energy_points--;
 	std::cout << "[ClapTrap] " << _name << " is repaired " << amount << " hit points." << std::endl;
-	std::cout << "[ClapTrap] " << _name << " has now " << _hit_points << " hit points." << std::endl;
-	std::cout << "[ClapTrap] " << _name << " has now " << _energy_points << " energy points." << std::endl;
+	std::cout << "[ClapTrap] " << _name << " has now " << _hit_points << " hit points and " << _energy_points << " energy points." << std::endl;
 }
