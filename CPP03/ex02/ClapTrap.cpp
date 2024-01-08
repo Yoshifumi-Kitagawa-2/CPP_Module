@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 00:30:11 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/08 16:23:16 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/08 16:54:43 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ ClapTrap::~ClapTrap() {
 	std::cout << "[ClapTrap] destructor called" << "[name: " << _name << "]" << std::endl;
 }
 
-void	ClapTrap::attack(std::string const &target) {
+void	ClapTrap::attack(const std::string &target) {
 	if (_energy_points == 0) {
 		std::cout << "[ClapTrap] " << _name << " cannot attack because of no energy points." << std::endl;
 		return ;

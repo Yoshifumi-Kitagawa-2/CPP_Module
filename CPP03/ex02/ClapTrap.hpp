@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 00:30:15 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/08 15:58:49 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/08 16:54:25 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class ClapTrap {
 		ClapTrap(const ClapTrap &src);
 		ClapTrap	&operator=(const ClapTrap &right);
 		~ClapTrap();
-		void		attack(std::string const &target);
+		void		attack(const　std::string &target);
 		void		takeDamage(unsigned int amount);
 		void		beRepaired(unsigned int amount);
 };

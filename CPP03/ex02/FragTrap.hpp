@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 17:28:03 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/03 18:00:33 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/08 16:51:41 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@
 class	FragTrap : public ClapTrap {
 	public:
 		FragTrap(std::string name);
+		FragTrap(const FragTrap &src);
+		FragTrap	&operator=(const FragTrap &right);
 		~FragTrap();
-		void	attack(std::string const &target);
+		void	attack(const std::string &target);
 		void	highFivesGuys(void);
 };
 
