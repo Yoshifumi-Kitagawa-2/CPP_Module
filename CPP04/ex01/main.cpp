@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 00:13:38 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/08 19:30:00 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/08 19:40:53 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main( void )
     delete j;
     delete i;
 
-    std::cout << "========Test 2: deep copy========" << std::endl;
+    std::cout << "========Test 2: deep copy about Dog========" << std::endl;
     std::cout << "========create dog1========" << std::endl;
     const Dog* dog1 = new Dog();
     std::cout << "========copy constructor:dog2 = new Dog(*dog1);========" << std::endl;
@@ -30,7 +30,7 @@ int main( void )
     delete dog2;
     delete dog1;
 
-    std::cout << "========Test 3: deep copy========" << std::endl;
+    std::cout << "========Test 3: deep copy about Cat========" << std::endl;
     std::cout << "========create cat1========" << std::endl;
     const Cat* cat1 = new Cat();
     std::cout << "========copy constructor:cat2 = new Cat(*cat1);========" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:45:17 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/08 19:34:39 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/08 19:39:42 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,6 @@ Cat &Cat::operator=(Cat const &right) {
 	if (this != &right)
 	{
 		_type = right._type;
-		if (_brain)
-			delete _brain;
 		try {
 			_brain = new Brain(*right._brain);
 		}
