@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 00:13:38 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/05 17:45:20 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/08 22:33:12 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,32 @@
 
 int main( void )
 {
+    std::cout << "=============Test 1 : easy test=============" << std::endl;
     const AAnimal* j = new Dog();
     const AAnimal* i = new Cat();
 
     delete j;//should not create a leak
     delete i;
 
-    Dog basic;
-    {
-        Dog tmp = basic;
-    }
+    std::cout << "=============Test 2: deep copy about Dog=============" << std::endl;
+    std::cout << "========create dog1========" << std::endl;
+    const Dog* dog1 = new Dog();
+    std::cout << "========copy constructor:dog2 = new Dog(*dog1);========" << std::endl;
+    const Dog* dog2 = new Dog(*dog1);
+    std::cout << "========delete dog1, dog2========" << std::endl;
+    delete dog2;
+    delete dog1;
 
-    const AAnimal* animals[4] = { new Dog(), new Dog(), new Cat(), new Cat() };
-    for ( int i = 0; i < 4; i++ ) {
-        delete animals[i];
-    }
+    std::cout << "=============Test 3: deep copy about Cat=============" << std::endl;
+    std::cout << "========create cat1========" << std::endl;
+    const Cat* cat1 = new Cat();
+    std::cout << "========copy constructor:cat2 = new Cat(*cat1);========" << std::endl;
+    const Cat* cat2 = new Cat(*cat1);
+    std::cout << "========delete cat1, cat2========" << std::endl;
+    delete cat2;
+    delete cat1;
 
+    //std::cout << "=============Test 4: Instance of AAimal cannot be created=============" << std::endl;
+    //const AAnimal* animal = new AAnimal();
     return 0;
 }

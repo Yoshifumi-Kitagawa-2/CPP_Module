@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:45:08 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/05 17:43:42 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/08 22:34:34 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,10 @@ class Dog : public AAnimal {
 		Brain *_brain;
 	public:
 		Dog();
-		~Dog();
 		Dog(Dog const &src);
 		Dog &operator=(Dog const &right);
+		~Dog();
 		void makeSound() const;
 };
-
 
 #endif

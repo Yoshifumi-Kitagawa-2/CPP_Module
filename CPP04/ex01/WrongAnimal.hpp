@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 00:12:35 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/05 15:35:29 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/08 18:56:20 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ class WrongAnimal {
 	public:
 		WrongAnimal();
 		WrongAnimal(std::string type);
-		WrongAnimal(const Animal &src);
-		WrongAnimal &operator=(const Animal &right);
+		WrongAnimal(const WrongAnimal &src);
+		WrongAnimal &operator=(const WrongAnimal &right);
 		~WrongAnimal();
 		std::string getType() const;
-		virtual void makeSound() const;
+		void makeSound() const;
 };
 
 #endif
