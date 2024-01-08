@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 00:13:34 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/08 17:50:25 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/08 18:48:31 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ Animal::Animal(std::string type) : _type(type) {
 }
 
 Animal::Animal(const Animal &src) {
-	std::cout << _type << " copy constructor called " << std::endl;
 	*this = src;
+	std::cout << _type << " copy constructor called " << std::endl;
 }
 
 Animal &Animal::operator=(const Animal &right) {
-	std::cout << _type << " assignation operator called " << std::endl;
 	if (this != &right)
 		_type = right._type;
+	std::cout << _type << " assignation operator called " << std::endl;
 	return (*this);
 }
 

@@ -6,14 +6,14 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:45:17 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/08 18:24:31 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/08 19:34:39 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
 Cat::Cat() : Animal("Cat") {
-	std::cout << _type << " constructor called " << std::endl;
+	std::cout << "[" << _type << "] constructor called at Cat.cpp" << std::endl;
 	try {
 		_brain = new Brain();
 	}
@@ -23,16 +23,16 @@ Cat::Cat() : Animal("Cat") {
 }
 
 Cat::Cat(Cat const &src) : Animal(src) {
-	std::cout << _type << " copy constructor called " << std::endl;
 	*this = src;
+	std::cout << "[" << _type << "] copy constructor called at Cat.cpp" << std::endl;
 }
 
 Cat &Cat::operator=(Cat const &right) {
-	std::cout << "Cat assignation operator called" << std::endl;
 	if (this != &right)
 	{
 		_type = right._type;
-		delete _brain;
+		if (_brain)
+			delete _brain;
 		try {
 			_brain = new Brain(*right._brain);
 		}
@@ -40,12 +40,13 @@ Cat &Cat::operator=(Cat const &right) {
 			std::cout << e.what() << std::endl;
 		}
 	}
+	std::cout << "[" << _type << "] assignation operator called at Cat.cpp" << std::endl;
 	return (*this);
 }
 
 Cat::~Cat() {
 	delete _brain;
-	std::cout << _type << " destructor called " << std::endl;
+	std::cout << "[" << _type << "] destructor called at Cat.cpp" << std::endl;
 }
 
 void Cat::makeSound() const {

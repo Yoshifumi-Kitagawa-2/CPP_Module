@@ -6,12 +6,12 @@
 #    By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/05 00:13:41 by yokitaga          #+#    #+#              #
-#    Updated: 2024/01/08 18:24:49 by yokitaga         ###   ########.fr        #
+#    Updated: 2024/01/08 19:30:51 by yokitaga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX = c++
-CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
+CXXFLAGS = -std=c++98 -Wall -Wextra -Werror -g -fsanitize=address
 
 SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
 OBJS = $(SRCS:.cpp=.o)
