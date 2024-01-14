@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 20:32:39 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/06 17:52:03 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/14 19:20:42 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,24 +59,26 @@ void PhoneBook::displayAll(void)const
 
 void PhoneBook::search(void)const
 {
-	int input;
-	
 	displayAll();
-	while (1)
-	{
-		std::cout << "[Please enter the contact index from displayed index number above.]" << std::endl;
-		std::cout << "> ";
-		std::cin >> input;
-		if (!std::cin.fail() && input >= 0 && input < getLastIndex())
-		{
-			contacts[input].displayDetail();
-			break ;
-		}
-		else
-		{
-			std::cout << "[Invalid input.]" << std::endl;
-			std::cin.clear();
-			std::cin.ignore(1024, '\n');
+	while (true) {
+        std::cout << "[Please enter the contact index from displayed index number above.]" << std::endl;
+        std::cout << "> ";
+        std::string userInput;
+        if (!std::getline(std::cin, userInput)) {
+            std::cerr << "[EOF detected. Exit the program.]" << std::endl;
+            std::exit(1);
+        }
+		char* endPtr;
+		long input = std::strtol(userInput.c_str(), &endPtr, 10);
+		if (*userInput.c_str() != '\0' && *endPtr == '\0') {
+			if (input >= 0 && input < getLastIndex()) {
+				contacts[(int)input].displayDetail();
+				break;
+			} else {
+				std::cout << "[Invalid input index number. Please retry.]" << std::endl;
+			}
+		} else {
+			std::cout << "[Invalid input. Please retry.]" << std::endl;
 		}
 	}
 }

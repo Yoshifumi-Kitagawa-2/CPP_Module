@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 00:04:03 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/06 16:38:32 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/14 19:15:38 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,25 @@ int	main()
 	PhoneBook phonebook;
 	std::string input;
 
-	input = "";
-	while (input != "EXIT")
+	while (1)
 	{
 		std::cout << "=============Please enter ADD, SEARCH or EXIT.=============" << std::endl;
 		std::cout << "> ";
-		std::cin >> input;
-		if (input == "ADD")
-			phonebook.add();
-		else if (input == "SEARCH")
-			phonebook.search();
-		else if (input == "EXIT")
-			phonebook.exit();
-		else
-			std::cout << "Invalid input. Please retry." << std::endl;
+		if (std::getline(std::cin, input))
+		{
+			if (input == "ADD")
+				phonebook.add();
+			else if (input == "SEARCH")
+				phonebook.search();
+			else if (input == "EXIT")
+				phonebook.exit();
+			else
+				std::cout << "Invalid input. Please retry." << std::endl;
+		}
+		else{
+			std::cerr << "[Error reading input. Exiting the program.]" << std::endl;
+            std::exit(1);
+		}
 	}
 	return (0);
 }
