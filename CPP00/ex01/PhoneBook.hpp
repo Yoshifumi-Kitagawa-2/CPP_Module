@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 20:32:43 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/14 19:05:16 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/15 00:09:13 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # endif
 
 #include "Contact.hpp"
+#include <cstdlib>
 
 class PhoneBook
 {
