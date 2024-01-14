@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 20:32:39 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/14 19:20:42 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/14 23:26:37 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,13 @@
 # include <string>
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook():currentIndex(0){}//currentindexを0で初期化
+PhoneBook::PhoneBook():currentIndex(0)
+{
+}
 
-PhoneBook::~PhoneBook(){}
+PhoneBook::~PhoneBook()
+{
+}
 
 void PhoneBook::add(void)
 {
