@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 20:32:39 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/14 23:39:21 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/15 00:16:14 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,10 +74,10 @@ void PhoneBook::search(void)const
             std::exit(1);
         }
 		char* endPtr;
-		long input = std::strtol(userInput.c_str(), &endPtr, 10);
+		long convertInput = std::strtol(userInput.c_str(), &endPtr, 10);
 		if (*userInput.c_str() != '\0' && *endPtr == '\0') {
-			if (input >= 0 && input < getLastIndex()) {
-				contacts[(int)input].displayDetail();
+			if (convertInput >= 0 && convertInput < getLastIndex()) {
+				contacts[(int)convertInput].displayDetail();
 				break;
 			} else {
 				std::cout << "[Invalid input index number. Please retry.]" << std::endl;
