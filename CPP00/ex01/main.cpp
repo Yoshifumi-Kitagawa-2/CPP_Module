@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 00:04:03 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/14 19:15:38 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/14 23:19:24 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	main()
 				std::cout << "Invalid input. Please retry." << std::endl;
 		}
 		else{
-			std::cerr << "[Error reading input. Exiting the program.]" << std::endl;
+			std::cerr << "[Error reading input. Exit the program.]" << std::endl;
             std::exit(1);
 		}
 	}

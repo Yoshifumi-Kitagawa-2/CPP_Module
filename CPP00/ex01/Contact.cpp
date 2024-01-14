@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 17:13:54 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/14 19:20:42 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/14 23:33:51 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,35 +29,65 @@ std::string	Contact::getFirstName()const
 
 void	Contact::initForAddContact(void)
 {
-	std::cout << "[Please enter the first name.]" << std::endl;
-    std::cout << "> ";
-    if (!std::getline(std::cin, first_name)) {
-        std::cerr << "[EOF detected. Exit the program.]" << std::endl;
-        std::exit(1);
+	while (true) {
+        std::cout << "[Please enter the first name.]" << std::endl;
+        std::cout << "> ";
+        if (!std::getline(std::cin, first_name)) {
+            std::cerr << "[EOF detected. Exit the program.]" << std::endl;
+            std::exit(1);
+        }
+        if (!first_name.empty()) {
+            break;
+        }
+        std::cout << "[Invalid input. Please retry.]" << std::endl;
     }
-    std::cout << "[Please enter the last name.]" << std::endl;
-    std::cout << "> ";
-    if (!std::getline(std::cin, last_name)) {
-		std::cerr << "[EOF detected. Exit the program.]" << std::endl;
-		std::exit(1);
-	}
-    std::cout << "[Please enter the nickname.]" << std::endl;
-    std::cout << "> ";
-    if (!std::getline(std::cin, nickname)) {
+	while (true) {
+		std::cout << "[Please enter the last name.]" << std::endl;
+		std::cout << "> ";
+		if (!std::getline(std::cin, last_name)) {
 			std::cerr << "[EOF detected. Exit the program.]" << std::endl;
 			std::exit(1);
+		}
+		if (!last_name.empty()) {
+			break;
+		}
+		std::cout << "[Invalid input. Please retry.]" << std::endl;
 	}
-    std::cout << "[Please enter the phone number.]" << std::endl;
-    std::cout << "> ";
-    if (!std::getline(std::cin, phone_number)) {
-		std::cerr << "[EOF detected. Exit the program.]" << std::endl;
-		std::exit(1);
+	while (true) {
+		std::cout << "[Please enter the nickname.]" << std::endl;
+		std::cout << "> ";
+		if (!std::getline(std::cin, nickname)) {
+				std::cerr << "[EOF detected. Exit the program.]" << std::endl;
+				std::exit(1);
+		}
+		if (!nickname.empty()) {
+			break;
+		}
+		std::cout << "[Invalid input. Please retry.]" << std::endl;
 	}
-    std::cout << "[Please enter the darkest secret.]" << std::endl;
-    std::cout << "> ";
-    if (!std::getline(std::cin, darkest_secret)) {
-		std::cerr << "[EOF detected. Exit the program.]" << std::endl;
-		std::exit(1);
+	while (true) {
+		std::cout << "[Please enter the phone number.]" << std::endl;
+		std::cout << "> ";
+		if (!std::getline(std::cin, phone_number)) {
+			std::cerr << "[EOF detected. Exit the program.]" << std::endl;
+			std::exit(1);
+		}
+		if (!phone_number.empty()) {
+			break;
+		}
+		std::cout << "[Invalid input. Please retry.]" << std::endl;
+	}
+	while (true) {
+		std::cout << "[Please enter the darkest secret.]" << std::endl;
+		std::cout << "> ";
+		if (!std::getline(std::cin, darkest_secret)) {
+			std::cerr << "[EOF detected. Exit the program.]" << std::endl;
+			std::exit(1);
+		}
+		if (!darkest_secret.empty()) {
+			break;
+		}
+		std::cout << "[Invalid input. Please retry.]" << std::endl;
 	}
 }
 
