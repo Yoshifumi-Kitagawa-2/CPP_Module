@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 17:13:54 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/06 17:41:55 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/14 19:20:42 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,22 +29,36 @@ std::string	Contact::getFirstName()const
 
 void	Contact::initForAddContact(void)
 {
-	std::cin.ignore();
 	std::cout << "[Please enter the first name.]" << std::endl;
-	std::cout << "> ";
-	std::cin >> first_name;
-	std::cout << "[Please enter the last name.]" << std::endl;
-	std::cout << "> ";
-	std::cin >> last_name;
-	std::cout << "[Please enter the nickname.]" << std::endl;
-	std::cout << "> ";
-	std::cin >> nickname;
-	std::cout << "[Please enter the phone number.]" << std::endl;
-	std::cout << "> ";
-	std::cin >> phone_number;
-	std::cout << "[Please enter the darkest secret.]" << std::endl;
-	std::cout << "> ";
-	std::cin >> darkest_secret;
+    std::cout << "> ";
+    if (!std::getline(std::cin, first_name)) {
+        std::cerr << "[EOF detected. Exit the program.]" << std::endl;
+        std::exit(1);
+    }
+    std::cout << "[Please enter the last name.]" << std::endl;
+    std::cout << "> ";
+    if (!std::getline(std::cin, last_name)) {
+		std::cerr << "[EOF detected. Exit the program.]" << std::endl;
+		std::exit(1);
+	}
+    std::cout << "[Please enter the nickname.]" << std::endl;
+    std::cout << "> ";
+    if (!std::getline(std::cin, nickname)) {
+			std::cerr << "[EOF detected. Exit the program.]" << std::endl;
+			std::exit(1);
+	}
+    std::cout << "[Please enter the phone number.]" << std::endl;
+    std::cout << "> ";
+    if (!std::getline(std::cin, phone_number)) {
+		std::cerr << "[EOF detected. Exit the program.]" << std::endl;
+		std::exit(1);
+	}
+    std::cout << "[Please enter the darkest secret.]" << std::endl;
+    std::cout << "> ";
+    if (!std::getline(std::cin, darkest_secret)) {
+		std::cerr << "[EOF detected. Exit the program.]" << std::endl;
+		std::exit(1);
+	}
 }
 
 void   Contact::setIndexForAdd(int index)

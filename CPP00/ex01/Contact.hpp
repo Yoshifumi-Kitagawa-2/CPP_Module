@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 17:00:16 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/06 17:41:08 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/14 19:06:08 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iomanip>
 #include <iostream>
+#include <cstdlib>
 
 class Contact
 {
