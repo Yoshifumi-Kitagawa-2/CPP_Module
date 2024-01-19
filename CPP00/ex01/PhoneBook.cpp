@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 20:32:39 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/15 00:16:14 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/19 21:30:14 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,10 @@ void PhoneBook::displayAll(void)const
 
 void PhoneBook::search(void)const
 {
+	if (getLastIndex() == 0) {
+		std::cout << "[No contacts.]" << std::endl;
+		return ;
+	}
 	displayAll();
 	while (true) {
         std::cout << "[Please enter the contact index from displayed index number above.]" << std::endl;
