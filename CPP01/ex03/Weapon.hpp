@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 18:59:44 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/07 14:33:58 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/20 11:16:17 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Weapon
 	public:
 		Weapon(std::string type);
 		~Weapon();
-		const std::string&	getType(void);//constをつけることで、この関数内での変更を禁止。
+		const std::string&	getType(void);
 		void				setType(std::string type);
 };
 
