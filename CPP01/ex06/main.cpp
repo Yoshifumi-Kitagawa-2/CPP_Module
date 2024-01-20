@@ -6,23 +6,20 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/31 17:55:53 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/07 15:51:13 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/20 15:14:19 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-int main(void)
+int main(int argc, char **argv)
 {
-	std::string input;
-	Harl harl;
-	std::cout << "Hello, world!" << std::endl;
-
-	do
+	if (argc != 2)
 	{
-		std::cout << "Enter a command {DEBUG/INFO/WARNING/ERROR}: ";
-		std::cin >> input;
-		harl.complain(input);
-	} while (1);
+		std::cerr << "[Error: Invalid arguments.]" << std::endl;
+		return (1);
+	}
+	Harl harl;
+	harl.complain(argv[1]);
 	return (0);
 }
