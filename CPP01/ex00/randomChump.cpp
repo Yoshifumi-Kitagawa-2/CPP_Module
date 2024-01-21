@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:44:35 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/21 23:21:13 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/22 00:00:30 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@
 
 void    randomChump( std::string name ) {
     Zombie  zombie( name );
-    std::cout << "[in randomChump] " << name << " is created by stack." << std::endl;
     zombie.announce();
 }
