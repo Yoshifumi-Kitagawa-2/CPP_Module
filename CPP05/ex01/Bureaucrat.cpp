@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 22:55:42 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/20 17:46:07 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/21 00:59:37 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,19 @@ void Bureacrat::decrementGrade()
 		throw Bureacrat::GradeTooLowException();
 	else
 		_grade++;
+}
+
+void Bureacrat::signForm(Form &form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << _name << " signs " << form.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << _name << " cannot sign " << form.getName() << " because " << e.what() << std::endl;
+	}
 }
 
 const char *Bureacrat::GradeTooHighException::what() const throw()

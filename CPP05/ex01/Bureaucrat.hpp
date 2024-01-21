@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 22:55:37 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/20 17:45:33 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/20 18:28:33 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,12 @@
 #include <iostream>
 #include <string>
 #include <stdexcept>
+#include "Form.hpp"
 
 #define MAX_GRADE 1
 #define MIN_GRADE 150
+
+class Form;
 
 class Bureacrat
 {
@@ -31,10 +34,12 @@ class Bureacrat
 		Bureacrat(const Bureacrat &src);
 		~Bureacrat();
 		Bureacrat &operator=(const Bureacrat &right);
+		
 		const std::string getName() const;
 		int getGrade() const;
 		void incrementGrade();
 		void decrementGrade();
+		void signForm(Form &Form);
 		class GradeTooHighException : public std::exception
 		{
 			public:
