@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/31 18:50:31 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/08 00:35:23 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/23 14:17:39 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 //constructor&destructor
 Fixed::Fixed()
 {
-	this->_fixedPointValue = 0;
+	this->fixedPointValue_ = 0;
 }
 
 Fixed::Fixed(const int num)
 {
-	this->_fixedPointValue = num << this->_fractionalBits;
+	this->fixedPointValue_ = num << this->fractionalBits_;
 }
 
 Fixed::Fixed(const float num)
 {
-	this->_fixedPointValue = roundf(num * (1 << this->_fractionalBits));
+	this->fixedPointValue_ = roundf(num * (1 << this->fractionalBits_));
 }
 
 Fixed::Fixed(const Fixed &src)
@@ -36,7 +36,7 @@ Fixed::Fixed(const Fixed &src)
 Fixed &Fixed::operator=(const Fixed &right)
 {
 	if (this != &right)
-		this->_fixedPointValue = right.getRawBits();
+		this->fixedPointValue_ = right.getRawBits();
 	return (*this);
 }
 
@@ -47,42 +47,42 @@ Fixed::~Fixed()
 //comparisonOperator
 bool Fixed::operator>(const Fixed &right) const
 {
-	if (this->_fixedPointValue > right.getRawBits())
+	if (this->fixedPointValue_ > right.getRawBits())
 		return (true);
 	return (false);
 }
 
 bool Fixed::operator<(const Fixed &right) const
 {
-	if (this->_fixedPointValue < right.getRawBits())
+	if (this->fixedPointValue_ < right.getRawBits())
 		return (true);
 	return (false);
 }
 
 bool Fixed::operator>=(const Fixed &right) const
 {
-	if (this->_fixedPointValue >= right.getRawBits())
+	if (this->fixedPointValue_ >= right.getRawBits())
 		return (true);
 	return (false);
 }
 
 bool Fixed::operator<=(const Fixed &right) const
 {
-	if (this->_fixedPointValue <= right.getRawBits())
+	if (this->fixedPointValue_ <= right.getRawBits())
 		return (true);
 	return (false);
 }
 
 bool Fixed::operator==(const Fixed &right) const
 {
-	if (this->_fixedPointValue == right.getRawBits())
+	if (this->fixedPointValue_ == right.getRawBits())
 		return (true);
 	return (false);
 }
 
 bool Fixed::operator!=(const Fixed &right) const
 {
-	if (this->_fixedPointValue != right.getRawBits())
+	if (this->fixedPointValue_ != right.getRawBits())
 		return (true);
 	return (false);
 }
@@ -112,7 +112,7 @@ Fixed Fixed::operator/(const Fixed &right) const
 //前置インクリメント
 Fixed &Fixed::operator++(void)
 {
-	this->_fixedPointValue += 1 << this->_fractionalBits;
+	this->fixedPointValue_ += 1 << this->fractionalBits_;
 	return (*this);
 }
 
@@ -121,14 +121,14 @@ Fixed &Fixed::operator++(void)
 Fixed Fixed::operator++(int)
 {
 	Fixed tmp(*this);
-	this->_fixedPointValue += 1 << this->_fractionalBits;
+	this->fixedPointValue_ += 1 << this->fractionalBits_;
 	return (tmp);
 }
 
 //前置デクリメント
 Fixed &Fixed::operator--(void)
 {
-	this->_fixedPointValue -= 1 << this->_fractionalBits;
+	this->fixedPointValue_ -= 1 << this->fractionalBits_;
 	return (*this);
 }
 
@@ -136,7 +136,7 @@ Fixed &Fixed::operator--(void)
 Fixed Fixed::operator--(int)
 {
 	Fixed tmp(*this);
-	this->_fixedPointValue -= 1 << this->_fractionalBits;
+	this->fixedPointValue_ -= 1 << this->fractionalBits_;
 	return (tmp);
 }
 
@@ -175,22 +175,22 @@ const Fixed &Fixed::max(const Fixed &left, const Fixed &right)
 
 int Fixed::getRawBits(void) const
 {
-	return (this->_fixedPointValue);
+	return (this->fixedPointValue_);
 }
 
 void Fixed::setRawBits(int const raw)
 {
-	this->_fixedPointValue = raw;
+	this->fixedPointValue_ = raw;
 }
 
 float Fixed::toFloat(void) const
 {
-	return ((float)this->_fixedPointValue / (1 << this->_fractionalBits));
+	return ((float)this->fixedPointValue_ / (1 << this->fractionalBits_));
 }
 
 int Fixed::toInt(void) const
 {
-	return (this->_fixedPointValue >> this->_fractionalBits);
+	return (this->fixedPointValue_ >> this->fractionalBits_);
 }
 
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed)
