@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/31 18:50:34 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/23 14:17:39 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/23 21:10:16 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FIXED_HPP
 
 # include <iostream>
+# include <cmath>
 
 class Fixed {
 	private:
