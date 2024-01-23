@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/31 18:50:34 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/12/31 20:38:50 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/23 14:17:45 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 
 class Fixed {
 	private:
-		int					_fixedPointValue;
-		static const int	_fractionalBits = 8;
+		int					fixedPointValue_;
+		static const int	fractionalBits_ = 8;
 	public:
 		Fixed();
 		Fixed(const int num);

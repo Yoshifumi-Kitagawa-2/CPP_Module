@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 00:03:36 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/03 00:13:13 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/23 21:02:10 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,5 @@ class Point
 		Fixed getY() const;
 		bool isSame(const Point &point) const;
 };
-
 
 #endif
