@@ -6,68 +6,68 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 00:30:11 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/08 16:54:43 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/24 16:05:13 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name) : _name(name), _hit_points(10), _energy_points(10), _attack_damage(0) {
-	std::cout << "[ClapTrap] constructor called" << "[name: " << _name << "]" << std::endl;
+ClapTrap::ClapTrap(std::string name) : name_(name), hit_points_(10), energy_points_(10), attack_damage_(0) {
+	std::cout << "[ClapTrap] constructor called" << "[name: " << name_ << "]" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &src) {
 	*this = src;
-	std::cout << "[ClapTrap] copy constructor called" << "[name: " << _name << "]" << std::endl;
+	std::cout << "[ClapTrap] copy constructor called" << "[name: " << name_ << "]" << std::endl;
 }
 
 ClapTrap&   ClapTrap::operator=( const ClapTrap& right ) {
 	if (this != &right) {
-		_name = right._name;
-		_hit_points = right._hit_points;
-		_energy_points = right._energy_points;
-		_attack_damage = right._attack_damage;
+		name_ = right.name_;
+		hit_points_ = right.hit_points_;
+		energy_points_ = right.energy_points_;
+		attack_damage_ = right.attack_damage_;
 	}
-	std::cout << "[ClapTrap] assignation operator called" << "[name: " << _name << "]" << std::endl;
+	std::cout << "[ClapTrap] assignation operator called" << "[name: " << name_ << "]" << std::endl;
     return *this;
 }
 
 ClapTrap::~ClapTrap() {
-	std::cout << "[ClapTrap] destructor called" << "[name: " << _name << "]" << std::endl;
+	std::cout << "[ClapTrap] destructor called" << "[name: " << name_ << "]" << std::endl;
 }
 
 void	ClapTrap::attack(const std::string &target) {
-	if (_energy_points == 0) {
-		std::cout << "[ClapTrap] " << _name << " cannot attack because of no energy points." << std::endl;
+	if (energy_points_ == 0) {
+		std::cout << "[ClapTrap] " << name_ << " cannot attack because of no energy points." << std::endl;
 		return ;
 	}
-	_energy_points--;
-	std::cout << "[ClapTrap] " << _name << " attacks " << target << ", causing " << _attack_damage << " points of damage!" << _energy_points << " energy points left." << std::endl;
+	energy_points_--;
+	std::cout << "[ClapTrap] " << name_ << " attacks " << target << ", causing " << attack_damage_ << " points of damage!" << energy_points_ << " energy points left." << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount) {
-	if (_hit_points == 0) {
-		std::cout << "[ClapTrap] " << _name << " has no hit points." <<  _name << " is dead." << std::endl;
+	if (hit_points_ == 0) {
+		std::cout << "[ClapTrap] " << name_ << " has no hit points." <<  name_ << " is dead." << std::endl;
 		return ;
 	}
-	if (amount >= _hit_points)
-		_hit_points = 0;
+	if (amount >= hit_points_)
+		hit_points_ = 0;
 	else
-		_hit_points -= amount;
-	std::cout << "[ClapTrap] " << _name << " takes " << amount << " points of damage!" << _hit_points << " hit points left." << std::endl;	
+		hit_points_ -= amount;
+	std::cout << "[ClapTrap] " << name_ << " takes " << amount << " points of damage!" << hit_points_ << " hit points left." << std::endl;	
 }
 
 void	ClapTrap::beRepaired(unsigned int amount) {
-	if (_energy_points == 0) {
-		std::cout << "[ClapTrap] " << _name << " cannot repairs itself because of no energy points. " << std::endl;
+	if (energy_points_ == 0) {
+		std::cout << "[ClapTrap] " << name_ << " cannot repairs itself because of no energy points. " << std::endl;
 		return ;
 	}
-	if (_hit_points == 0) {
-		std::cout << "[ClapTrap] " << _name << " cannot repairs itself beacuse of no hit points." << std::endl;
+	if (hit_points_ == 0) {
+		std::cout << "[ClapTrap] " << name_ << " cannot repairs itself beacuse of no hit points." << std::endl;
 		return ;
 	}
-	_hit_points += amount;
-	_energy_points--;
-	std::cout << "[ClapTrap] " << _name << " is repaired " << amount << " hit points." << std::endl;
-	std::cout << "[ClapTrap] " << _name << " has now " << _hit_points << " hit points and " << _energy_points << " energy points." << std::endl;
+	hit_points_ += amount;
+	energy_points_--;
+	std::cout << "[ClapTrap] " << name_ << " is repaired " << amount << " hit points." << std::endl;
+	std::cout << "[ClapTrap] " << name_ << " has now " << hit_points_ << " hit points and " << energy_points_ << " energy points." << std::endl;
 }
