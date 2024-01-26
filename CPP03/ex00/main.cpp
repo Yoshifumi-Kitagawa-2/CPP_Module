@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 00:27:16 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/08 16:22:27 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/26 22:43:26 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int main() {
 	a.takeDamage(20);
 	//can't be repaired
 	a.beRepaired(10);
+	//can't attack
+	a.attack("B");
 	//can't take damage
 	a.takeDamage(10);
 	std::cout << "===========================test about energy points===========================" << std::endl;

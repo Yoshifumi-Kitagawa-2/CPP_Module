@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 16:24:45 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/24 16:05:13 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/26 22:40:53 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,10 @@ ScavTrap::~ScavTrap() {
 void	ScavTrap::attack(const std::string &target) {
 	if (energy_points_ == 0) {
 		std::cout << "[ScavTrap] " << name_ << " cannot attack because of no energy points." << std::endl;
+		return ;
+	}
+	if (hit_points_ == 0) {
+		std::cout << "[ScavTrap] " << name_ << " cannot attack because of no hit points." << std::endl;
 		return ;
 	}
 	energy_points_--;
