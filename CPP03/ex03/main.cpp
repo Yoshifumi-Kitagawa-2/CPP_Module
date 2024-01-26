@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 00:27:16 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/26 22:45:21 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/27 00:18:40 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int main() {
 	//can't be repaired
 	a.beRepaired(10);
 	//can't attack
-	a.attack("B");
+	a.attack("B");//ScavTrap::attack
 	//can't take damage
 	a.takeDamage(10);
 	std::cout << "===========================test about energy points===========================" << std::endl;
@@ -49,5 +49,14 @@ int main() {
 	b.attack("B");
 	//cann't be repaired
 	b.beRepaired(10);
+	std::cout << "===========================test about copy constructor and assignation operator===========================" << std::endl;
+	DiamondTrap c("Test3");
+	DiamondTrap d(c);
+	//attack
+	d.attack("Test4");
+	DiamondTrap e = d;
+	//attack
+	e.attack("Test5");
+	std::cout << "===========Finish===========" << std::endl;
 	return 0;
 }

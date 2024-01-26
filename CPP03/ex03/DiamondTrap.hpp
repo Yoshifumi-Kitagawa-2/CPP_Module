@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 18:04:41 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/24 16:04:10 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/27 00:04:55 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,5 @@ class DiamondTrap : public ScavTrap, public FragTrap {
 		using	ScavTrap::attack;
 		void	whoAmI(void);
 };
-
 
 #endif
