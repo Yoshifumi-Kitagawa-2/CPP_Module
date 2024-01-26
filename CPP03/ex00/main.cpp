@@ -6,14 +6,14 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 00:27:16 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/08 16:22:27 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/27 00:19:27 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 int main() {
-	std::cout << "===========================test about four functions===========================" << std::endl;
+	std::cout << "===========================test about three functions===========================" << std::endl;
 	ClapTrap a("Test1");
 
 	//attack
@@ -28,6 +28,8 @@ int main() {
 	a.takeDamage(20);
 	//can't be repaired
 	a.beRepaired(10);
+	//can't attack
+	a.attack("B");
 	//can't take damage
 	a.takeDamage(10);
 	std::cout << "===========================test about energy points===========================" << std::endl;
@@ -51,5 +53,6 @@ int main() {
 	c.attack("B");
 	d.attack("B");
 	e.attack("B");
+	std::cout << "===========Finish===========" << std::endl;
 	return 0;
 }
