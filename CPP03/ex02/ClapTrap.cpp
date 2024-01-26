@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 00:30:11 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/24 16:05:13 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/26 22:53:55 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,10 @@ void	ClapTrap::attack(const std::string &target) {
 		std::cout << "[ClapTrap] " << name_ << " cannot attack because of no energy points." << std::endl;
 		return ;
 	}
+	if (hit_points_ == 0) {
+		std::cout << "[ClapTrap] " << name_ << " cannot attack because of no hit points." << name_ << " is dead." << std::endl;
+		return ;
+	}
 	energy_points_--;
 	std::cout << "[ClapTrap] " << name_ << " attacks " << target << ", causing " << attack_damage_ << " points of damage!" << energy_points_ << " energy points left." << std::endl;
 }
@@ -63,7 +67,7 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 		return ;
 	}
 	if (hit_points_ == 0) {
-		std::cout << "[ClapTrap] " << name_ << " cannot repairs itself beacuse of no hit points." << std::endl;
+		std::cout << "[ClapTrap] " << name_ << " cannot repairs itself beacuse of no hit points." << name_ << " is dead." << std::endl;
 		return ;
 	}
 	hit_points_ += amount;

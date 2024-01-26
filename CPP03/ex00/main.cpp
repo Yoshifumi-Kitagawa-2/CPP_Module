@@ -6,14 +6,14 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 00:27:16 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/26 22:43:26 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/26 23:22:25 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 int main() {
-	std::cout << "===========================test about four functions===========================" << std::endl;
+	std::cout << "===========================test about three functions===========================" << std::endl;
 	ClapTrap a("Test1");
 
 	//attack
