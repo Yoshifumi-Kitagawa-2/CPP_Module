@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 00:13:34 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/27 18:58:05 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/27 23:52:34 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,10 @@ Animal::~Animal() {
 }
 
 std::string Animal::getType() const {
+	std::cout << "[" << type_ << "] getType called at Animal.cpp" << std::endl;
 	return (type_);
 }
 
 void Animal::makeSound() const {
-	std::cout << "Animal makeSound called " << std::endl;
+	std::cout << "[" << type_ << "] makeSound called at Animal.cpp" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 00:13:34 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/27 18:58:05 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/27 23:46:48 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,3 @@ AAnimal::~AAnimal() {
 std::string AAnimal::getType() const {
 	return (type_);
 }
-
-//void AAnimal::makeSound() const {
-//	std::cout << "[AAnimal] makeSound called " << std::endl;
-//}

@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 15:33:30 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/27 18:58:05 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/27 23:57:28 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ WrongCat::~WrongCat() {
 }
 
 void WrongCat::makeSound() const {
-	std::cout << "meow! meow!" << std::endl;
+	std::cout << "meow! meow! at WrongCat.cpp" << std::endl;
 }

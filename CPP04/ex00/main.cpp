@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 00:13:38 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/08 22:39:21 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/27 23:38:32 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,36 @@ int main()
 	delete meta;
 	delete j;
 	delete i;
+	std::cout << "==========Test1 : end==========" << std::endl;
 	//failed delete because of non-virtual destructor
 	std::cout << "==========Test2 : fail overriding and deleting because of non-virtual function and non-virtual destructor==========" << std::endl;
 	const WrongAnimal* wrong_meta = new WrongAnimal();
 	const WrongAnimal* wrong_i = new WrongCat();
-	std::cout << wrong_i->getType() << " " << std::endl;
+	std::cout << wrong_i->getType() << std::endl;
 	std::cout << "==========fail overriding==========" << std::endl;
 	wrong_i->makeSound();
 	wrong_meta->makeSound();
 	std::cout << "==========fail deleting==========" << std::endl;
 	delete wrong_meta;
-	delete wrong_i;
+	delete wrong_i;//only WrongAnimal destructor called
+	std::cout << "==========Test2 : end==========" << std::endl;
+
+
+	std::cout << "==========Test3 : test about copy constructor and assignation operator==========" << std::endl;
+	Dog dog1;
+	Dog dog2(dog1);
+	Dog dog3 = dog1;
+
+	Cat cat1;
+	Cat cat2(cat1);
+	Cat cat3 = cat1;
+
+	std::cout << "dog1: " << dog1.getType() << std::endl;
+	std::cout << "dog2: " << dog2.getType() << std::endl;
+	std::cout << "dog3: " << dog3.getType() << std::endl;
+	std::cout << "cat1: " << cat1.getType() << std::endl;
+	std::cout << "cat2: " << cat2.getType() << std::endl;
+	std::cout << "cat3: " << cat3.getType() << std::endl;
+	std::cout << "==========Test3 : end==========" << std::endl;
 	return 0;
 }

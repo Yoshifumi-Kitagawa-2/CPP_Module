@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:45:08 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/08 22:34:34 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/28 00:02:35 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class Dog : public AAnimal {
 	private:
-		Brain *_brain;
+		Brain *brain_;
 	public:
 		Dog();
 		Dog(Dog const &src);

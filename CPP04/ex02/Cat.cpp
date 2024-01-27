@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:45:17 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/27 18:58:05 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/28 00:02:35 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Cat::Cat() : AAnimal("Cat") {
 	std::cout << "[" << type_ << "] constructor called at Cat.cpp" << std::endl;
-	_brain = new Brain();
+	brain_ = new Brain();
 }
 
 Cat::Cat(Cat const &src) : AAnimal(src) {
@@ -26,17 +26,17 @@ Cat &Cat::operator=(Cat const &right) {
 	if (this != &right)
 	{
 		type_ = right.type_;
-		_brain = new Brain(*right._brain);
+		brain_ = new Brain(*right.brain_);
 	}
 	std::cout << "[" << type_ << "] assignation operator called at Cat.cpp" << std::endl;
 	return (*this);
 }
 
 Cat::~Cat() {
-	delete _brain;
+	delete brain_;
 	std::cout << "[" << type_ << "] destructor called at Cat.cpp" << std::endl;
 }
 
 void Cat::makeSound() const {
-	std::cout << "meow! meow!" << std::endl;
+	std::cout << "meow! meow! at Cat.cpp" << std::endl;
 }

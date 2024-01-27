@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:45:21 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/08 19:52:33 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/28 00:02:35 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class Cat : public AAnimal {
 	private:
-		Brain *_brain;
+		Brain *brain_;
 	public:
 		Cat();
 		Cat(Cat const &src);
