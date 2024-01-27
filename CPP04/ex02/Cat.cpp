@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:45:17 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/28 00:02:35 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/28 00:09:51 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ Cat::Cat() : AAnimal("Cat") {
 	brain_ = new Brain();
 }
 
-Cat::Cat(Cat const &src) : AAnimal(src) {
+Cat::Cat(const Cat &src) : AAnimal(src) {
 	*this = src;
 	std::cout << "[" << type_ << "] copy constructor called at Cat.cpp" << std::endl;
 }
 
-Cat &Cat::operator=(Cat const &right) {
+Cat &Cat::operator=(const Cat &right) {
 	if (this != &right)
 	{
 		type_ = right.type_;

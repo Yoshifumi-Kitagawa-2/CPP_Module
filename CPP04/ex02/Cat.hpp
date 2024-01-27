@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:45:21 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/28 00:02:35 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/28 00:09:35 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ class Cat : public AAnimal {
 		Brain *brain_;
 	public:
 		Cat();
-		Cat(Cat const &src);
-		Cat &operator=(Cat const &right);
+		Cat(const Cat &src);
+		Cat &operator=(const Cat &right);
 		~Cat();
 		void makeSound() const;
 };

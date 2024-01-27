@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:45:33 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/28 00:02:35 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/28 00:10:21 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ Dog::Dog() : AAnimal("Dog") {
 	brain_ = new Brain();
 }
 
-Dog::Dog(Dog const &src) : AAnimal(src) {
+Dog::Dog(const Dog &src) : AAnimal(src) {
 	*this = src;
 	std::cout << "[" << type_ << "] copy constructor called at Dog.cpp" << std::endl;
 }
 
-Dog &Dog::operator=(Dog const &right) {
+Dog &Dog::operator=(const Dog &right) {
 	if (this != &right)
 	{
 		type_ = right.type_;
