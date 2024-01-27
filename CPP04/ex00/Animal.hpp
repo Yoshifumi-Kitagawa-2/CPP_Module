@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 00:12:35 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/08 17:50:31 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/27 18:58:05 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class Animal {
 	protected:
-		std::string _type;
+		std::string type_;
 	public:
 		Animal();
 		Animal(std::string type);

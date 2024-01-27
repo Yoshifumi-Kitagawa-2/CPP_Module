@@ -6,38 +6,38 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 00:13:34 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/08 22:44:02 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/27 18:58:05 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AAnimal.hpp"
 
-AAnimal::AAnimal() : _type("AAnimal") {
-	std::cout << "[" << _type << "] constructor called at AAnimal.cpp" << std::endl;
+AAnimal::AAnimal() : type_("AAnimal") {
+	std::cout << "[" << type_ << "] constructor called at AAnimal.cpp" << std::endl;
 }
 
-AAnimal::AAnimal(std::string type) : _type(type) {
-	std::cout << "[" << _type << "] constructor called at AAnimal.cpp" << std::endl;
+AAnimal::AAnimal(std::string type) : type_(type) {
+	std::cout << "[" << type_ << "] constructor called at AAnimal.cpp" << std::endl;
 }
 
 AAnimal::AAnimal(const AAnimal &src) {
 	*this = src;
-	std::cout << "[" << _type << "] copy constructor called at AAnimal.cpp" << std::endl;
+	std::cout << "[" << type_ << "] copy constructor called at AAnimal.cpp" << std::endl;
 }
 
 AAnimal &AAnimal::operator=(const AAnimal &right) {
 	if (this != &right)
-		_type = right._type;
-	std::cout << "[" << _type << "] operator= called at AAnimal.cpp" << std::endl;
+		type_ = right.type_;
+	std::cout << "[" << type_ << "] operator= called at AAnimal.cpp" << std::endl;
 	return (*this);
 }
 
 AAnimal::~AAnimal() {
-	std::cout << "[" << _type << "] destructor called at AAnimal.cpp" << std::endl;
+	std::cout << "[" << type_ << "] destructor called at AAnimal.cpp" << std::endl;
 }
 
 std::string AAnimal::getType() const {
-	return (_type);
+	return (type_);
 }
 
 //void AAnimal::makeSound() const {
