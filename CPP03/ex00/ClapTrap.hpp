@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 00:30:15 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/24 16:05:15 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/27 18:08:28 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <string>
 
 class ClapTrap {
-	protected:
+	private:
 		std::string		name_;
 		unsigned int	hit_points_;
 		unsigned int	energy_points_;
