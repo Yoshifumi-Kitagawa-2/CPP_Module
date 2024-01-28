@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 15:40:53 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/08 19:05:53 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/28 00:25:03 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,16 @@ Brain::Brain() {
 	std::cout << "[Brain] constructor called" << std::endl;
 }
 
-Brain::Brain(Brain const &src) {
+Brain::Brain(const Brain &src) {
 	*this = src;
 	std::cout << "[Brain] copy constructor called" << std::endl;
 }
 
-Brain &Brain::operator=(Brain const &right) {
+Brain &Brain::operator=(const Brain &right) {
 	if (this != &right)
 	{
 		for (int i = 0; i < 100; i++)
-			this->_ideas[i] = right._ideas[i];
+			this->ideas_[i] = right.ideas_[i];
 	}
 	std::cout << "[Brain] assignation operator called" << std::endl;
 	return (*this);

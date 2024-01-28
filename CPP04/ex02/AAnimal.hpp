@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 00:12:35 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/08 20:42:33 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/28 10:20:00 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class AAnimal {
 	protected:
-		std::string _type;
+		std::string type_;
 	public:
 		AAnimal();
 		AAnimal(std::string type);
