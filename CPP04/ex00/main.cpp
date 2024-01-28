@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 00:13:38 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/28 11:21:42 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/28 12:11:50 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 #include "Cat.hpp"
 #include "WrongCat.hpp"
 
-#include <libc.h>
-__attribute__((destructor))
-static void destructor() {
-    system("leaks -q a.out");
-}
+//#include <libc.h>
+//__attribute__((destructor))
+//static void destructor() {
+//    system("leaks -q a.out");
+//}
 
 int main()
 {
