@@ -6,18 +6,18 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 00:13:34 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/27 23:52:34 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/01/28 10:31:24 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
 Animal::Animal() : type_("Animal") {
-	std::cout << "[" << type_ << "] constructor called at Animal.cpp" << std::endl;
+	std::cout << "[" << type_ << "] default constructor called at Animal.cpp" << std::endl;
 }
 
 Animal::Animal(std::string type) : type_(type) {
-	std::cout << "[" << type_ << "] constructor called at Animal.cpp" << std::endl;
+	std::cout << "[" << type_ << "] constructor with type called at Animal.cpp" << std::endl;
 }
 
 Animal::Animal(const Animal &src) {
