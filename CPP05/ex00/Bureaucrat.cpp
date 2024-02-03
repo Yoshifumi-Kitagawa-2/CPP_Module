@@ -6,78 +6,80 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 22:55:42 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/20 17:46:07 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/02/03 18:17:12 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Bureaucrat.hpp"
 
-Bureacrat::Bureacrat() : _name("default"), _grade(150)
+Bureaucrat::Bureaucrat() : name_("default"), grade_(150)
 {
 }
 
-Bureacrat::Bureacrat(const std::string name, int grade) : _name(name)
+Bureaucrat::Bureaucrat(const std::string &name, int grade) : name_(name)
 {
-	if (grade < MAX_GRADE)
-		throw Bureacrat::GradeTooHighException();
-	else if (grade > MIN_GRADE)
-		throw Bureacrat::GradeTooLowException();
+	if (grade < MAXgrade)
+		throw Bureaucrat::GradeTooHighException();
+	else if (grade > MINgrade)
+		throw Bureaucrat::GradeTooLowException();
 	else
-		_grade = grade;
+		grade_ = grade;
 }
 
-Bureacrat::Bureacrat(const Bureacrat &src) : _name(src._name), _grade(src._grade)
+Bureaucrat::Bureaucrat(const Bureaucrat &src) : name_(src.name_)//name_はconstなのでコピーできない
 {
+	*this = src;
 }
 
-Bureacrat &Bureacrat::operator=(const Bureacrat &right)
+Bureaucrat &Bureaucrat::operator=(const Bureaucrat &right)
 {
-	if (this != &right)
-		_grade = right._grade;
+	if (this != &right){
+		grade_ = right.grade_;
+	}
 	return (*this);
 }
 
-Bureacrat::~Bureacrat()
+Bureaucrat::~Bureaucrat()
 {
 }
 
-const std::string Bureacrat::getName() const
+const std::string Bureaucrat::getName() const
 {
-	return (_name);
+	return (name_);
 }
 
-int Bureacrat::getGrade() const
+int Bureaucrat::getGrade() const
 {
-	return (_grade);
+	return (grade_);
 }
 
-void Bureacrat::incrementGrade()
+void Bureaucrat::incrementGrade()
 {
-	if (_grade - 1 < MAX_GRADE)
-		throw Bureacrat::GradeTooHighException();
+	if (grade_ - 1 < MAXgrade)
+		throw Bureaucrat::GradeTooHighException();
 	else
-		_grade--;
+		grade_--;
 }
 
-void Bureacrat::decrementGrade()
+void Bureaucrat::decrementGrade()
 {
-	if (_grade + 1 > MIN_GRADE)
-		throw Bureacrat::GradeTooLowException();
+	if (grade_ + 1 > MINgrade)
+		throw Bureaucrat::GradeTooLowException();
 	else
-		_grade++;
+		grade_++;
 }
 
-const char *Bureacrat::GradeTooHighException::what() const throw()
+const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return ("Grade is too high.");
+	return ("Grade is too High.");
 }
 
-const char *Bureacrat::GradeTooLowException::what() const throw()
+const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
 	return ("Grade is too low.");
 }
 
-std::ostream &operator<<(std::ostream &out, const Bureacrat &right)
+std::ostream &operator<<(std::ostream &out, const Bureaucrat &right)
 {
 	out << right.getName() << ", bureaucrat grade " << right.getGrade() << std::endl;
 	return (out);

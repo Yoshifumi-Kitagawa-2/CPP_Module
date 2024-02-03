@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 22:55:37 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/02/03 18:17:12 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/02/03 19:06:16 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,12 @@
 #include <iostream>
 #include <string>
 #include <stdexcept>
+#include "Form.hpp"
 
 #define MAXgrade 1
 #define MINgrade 150
+
+class Form;
 
 class Bureaucrat
 {
@@ -37,6 +40,8 @@ class Bureaucrat
 		
 		void incrementGrade();
 		void decrementGrade();
+
+		void signForm(Form &form);
 		
 		class GradeTooHighException : public std::exception
 		{

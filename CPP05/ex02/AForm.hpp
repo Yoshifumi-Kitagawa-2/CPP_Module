@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/31 21:58:08 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/02/03 18:42:08 by yokitaga         ###   ########.fr       */
+/*   Created: 2024/02/03 19:07:42 by yokitaga          #+#    #+#             */
+/*   Updated: 2024/02/03 19:15:56 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-# define FORM_HPP
+#ifndef AFORM_HPP
+# define AFORM_HPP
 
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
 	private:
 		const std::string name_;
@@ -25,11 +25,11 @@ class Form
 		const int gradeToSign_;
 		const int gradeToExecute_;
 	public:
-		Form();
-		Form(const std::string &name, int gradeToSign, int gradeToExecute);
-		Form(const Form &src);
-		Form &operator=(const Form &right); 
-		~Form();
+		AForm();
+		AForm(const std::string &name, int gradeToSign, int gradeToExecute);
+		AForm(const AForm &src);
+		AForm &operator=(const AForm &right); 
+		~AForm();
 
 		const std::string getName() const;
 		bool	getSigned() const;
@@ -50,6 +50,6 @@ class Form
 		};
 };
 
-std::ostream&   operator<<( std::ostream& out, const Form& right );
+std::ostream&   operator<<( std::ostream& out, const AForm& right );
 
 #endif
