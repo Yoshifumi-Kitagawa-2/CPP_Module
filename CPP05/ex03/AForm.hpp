@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/31 21:58:08 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/02/04 00:27:57 by yokitaga         ###   ########.fr       */
+/*   Created: 2024/02/03 19:07:42 by yokitaga          #+#    #+#             */
+/*   Updated: 2024/02/04 15:48:53 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-# define FORM_HPP
+#ifndef AFORM_HPP
+# define AFORM_HPP
 
 #include "Bureaucrat.hpp"
 
@@ -29,7 +29,7 @@ class Form
 		Form(const std::string &name, int gradeToSign, int gradeToExecute);
 		Form(const Form &src);
 		Form &operator=(const Form &right); 
-		~Form();
+		virtual ~Form();
 
 		const std::string getName() const;
 		bool	getSigned() const;
@@ -38,12 +38,20 @@ class Form
 
 		void	beSigned(const Bureaucrat &src);
 		
+
+		virtual void execute(const Bureaucrat &executor) const = 0;
+
 		class GradeTooLowException : public std::exception
 		{
 			public:
 				virtual const char *what() const throw();
 		};
 		class GradeTooHighException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
+		class FormIsSignedCheck : public std::exception
 		{
 			public:
 				virtual const char *what() const throw();

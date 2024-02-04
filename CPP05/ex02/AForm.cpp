@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/31 21:58:15 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/02/04 12:48:50 by yokitaga         ###   ########.fr       */
+/*   Created: 2024/02/03 19:07:47 by yokitaga          #+#    #+#             */
+/*   Updated: 2024/02/04 12:53:01 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
 Form::Form() : name_("default"), isSigned_(false), gradeToSign_(150), gradeToExecute_(150)
 {
@@ -83,17 +83,17 @@ const char *Form::GradeTooLowException::what() const throw()
 	return ("Grade is too low in Form.cpp.");
 }
 
+const char *Form::FormIsSignedCheck::what() const throw()
+{
+	return ("this form is not signed.");
+}
+
 std::ostream &operator<<(std::ostream &out, const Form &right)
 {
     out << "-----[Form Infomation]-----" << std::endl
-		<< "[Form name]: " << right.getName() << std::endl
-		<< "[Required grade to sign]: " << right.getGradeToSign() << std::endl
-		<< "[Required grade to execute]: " << right.getGradeToExecute() << std::endl;
-    out << "---------------------------" << std::endl;
+        << "[Form name]: " << right.getName() << std::endl
+        << "[Required grade to sign]: " << right.getGradeToSign() << std::endl
+        << "[Required grade to execute]: " << right.getGradeToExecute() << std::endl;
+	out << "---------------------------" << std::endl;
     return out;
 }
-
-
-
-
-

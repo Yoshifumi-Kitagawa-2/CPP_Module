@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 22:55:37 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/01/20 17:45:33 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/02/04 00:27:32 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,27 @@
 #include <string>
 #include <stdexcept>
 
-#define MAX_GRADE 1
-#define MIN_GRADE 150
+#define MAXgrade 1
+#define MINgrade 150
 
-class Bureacrat
+class Bureaucrat
 {
 	private:
-		const std::string _name;
-		int _grade;
+		const std::string name_;
+		int grade_;
+		Bureaucrat();
 	public:
-		Bureacrat();
-		Bureacrat(const std::string name, int grade);
-		Bureacrat(const Bureacrat &src);
-		~Bureacrat();
-		Bureacrat &operator=(const Bureacrat &right);
+		Bureaucrat(const std::string &name, int grade);
+		Bureaucrat(const Bureaucrat &src);
+		~Bureaucrat();
+		Bureaucrat &operator=(const Bureaucrat &right);
+		
 		const std::string getName() const;
 		int getGrade() const;
+		
 		void incrementGrade();
 		void decrementGrade();
+		
 		class GradeTooHighException : public std::exception
 		{
 			public:
@@ -47,6 +50,6 @@ class Bureacrat
 		};
 };
 
-std::ostream &operator<<(std::ostream &out, const Bureacrat &right);
+std::ostream &operator<<(std::ostream &out, const Bureaucrat &right);
 
 #endif
