@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 22:55:37 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/02/03 18:17:12 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/02/04 00:27:45 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ class Bureaucrat
 	private:
 		const std::string name_;
 		int grade_;
-	public:
 		Bureaucrat();
+	public:
 		Bureaucrat(const std::string &name, int grade);
 		Bureaucrat(const Bureaucrat &src);
 		~Bureaucrat();

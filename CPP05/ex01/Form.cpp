@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 21:58:15 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/02/03 18:59:52 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/02/04 12:48:50 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,9 +86,10 @@ const char *Form::GradeTooLowException::what() const throw()
 std::ostream &operator<<(std::ostream &out, const Form &right)
 {
     out << "-----[Form Infomation]-----" << std::endl
-        << "[Form name]: " << right.getName() << std::endl
-        << "[Required grade to sign]: " << right.getGradeToSign() << std::endl
-        << "[Required grade to execute]: " << right.getGradeToExecute() << std::endl;
+		<< "[Form name]: " << right.getName() << std::endl
+		<< "[Required grade to sign]: " << right.getGradeToSign() << std::endl
+		<< "[Required grade to execute]: " << right.getGradeToExecute() << std::endl;
+    out << "---------------------------" << std::endl;
     return out;
 }
 

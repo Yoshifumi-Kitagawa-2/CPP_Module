@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 21:58:08 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/02/03 18:42:08 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/02/04 00:27:57 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ class Form
 		bool isSigned_;
 		const int gradeToSign_;
 		const int gradeToExecute_;
-	public:
 		Form();
+	public:
 		Form(const std::string &name, int gradeToSign, int gradeToExecute);
 		Form(const Form &src);
 		Form &operator=(const Form &right); 

@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 19:07:42 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/02/03 19:15:56 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/02/04 11:54:39 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,20 @@
 
 class Bureaucrat;
 
-class AForm
+class Form
 {
 	private:
 		const std::string name_;
 		bool isSigned_;
 		const int gradeToSign_;
 		const int gradeToExecute_;
+		Form();
 	public:
-		AForm();
-		AForm(const std::string &name, int gradeToSign, int gradeToExecute);
-		AForm(const AForm &src);
-		AForm &operator=(const AForm &right); 
-		~AForm();
+	    //もしかしてprivateにするべき？
+		Form(const std::string &name, int gradeToSign, int gradeToExecute);
+		Form(const Form &src);
+		Form &operator=(const Form &right); 
+		~Form();
 
 		const std::string getName() const;
 		bool	getSigned() const;
@@ -38,6 +39,9 @@ class AForm
 
 		void	beSigned(const Bureaucrat &src);
 		
+
+		virtual void execute(const Bureaucrat &executor) const = 0;
+
 		class GradeTooLowException : public std::exception
 		{
 			public:
@@ -48,8 +52,13 @@ class AForm
 			public:
 				virtual const char *what() const throw();
 		};
+		class FormIsSignedCheck : public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
 };
 
-std::ostream&   operator<<( std::ostream& out, const AForm& right );
+std::ostream&   operator<<( std::ostream& out, const Form& right );
 
 #endif
