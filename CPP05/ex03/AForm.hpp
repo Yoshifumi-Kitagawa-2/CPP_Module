@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 19:07:42 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/02/04 15:47:54 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/02/04 15:48:53 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ class Form
 		const int gradeToExecute_;
 		Form();
 	public:
-	    //もしかしてprivateにするべき？
 		Form(const std::string &name, int gradeToSign, int gradeToExecute);
 		Form(const Form &src);
 		Form &operator=(const Form &right); 
