@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 16:08:58 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/02/04 17:33:51 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/02/07 00:06:16 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define SCALARCONVERTER_HPP
 
 #include <string>
-
+#include <iostream>
 class ScalarConverter
 {
 	private:
@@ -23,20 +23,30 @@ class ScalarConverter
 		int		int_;
 		float	float_;
 		double	double_;
-		
-		
-		void scalarConverter();
+
+		int 	type_;
+
+		bool	isChar() const;
+		bool 	isInt() const;
+		bool	isFloat() const;
+		bool	isDouble() const;
+		void	parseInput();
+
+		void	scalarConverter();
 		
 		ScalarConverter();
 	public:
 		ScalarConverter(std::string input);
+		ScalarConverter(const ScalarConverter &src);
 		ScalarConverter &operator=(const ScalarConverter &right);
 		~ScalarConverter();
 
 		void printChar()const;
 		void printInt()const;
-		void printflaot()const;
-		void printdouble()const;
+		void printFloat()const;
+		void printDouble()const;
 };
+
+std::ostream&   operator<<(std::ostream& out, const ScalarConverter& ScalarConverter);
 
 #endif
