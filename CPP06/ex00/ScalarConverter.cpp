@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 16:08:56 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/02/07 00:11:26 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/02/08 23:29:44 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ bool ScalarConverter::isDouble()const
 void ScalarConverter::parseInput()
 {
 	bool (ScalarConverter::*functions[4])() const = {&ScalarConverter::isChar, &ScalarConverter::isInt, &ScalarConverter::isFloat, &ScalarConverter::isDouble};
-	for (int i = 0; i < 4;)
+	for (int i = 0; i < 4; i++)
 	{
 		if ((this->*functions[i])() == true)
 			type_ = i;
