@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 16:08:58 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/02/07 00:06:16 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/02/09 00:48:35 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class ScalarConverter
 		int		int_;
 		float	float_;
 		double	double_;
+		bool	impossible_;
 
 		int 	type_;
 
@@ -30,6 +31,7 @@ class ScalarConverter
 		bool 	isInt() const;
 		bool	isFloat() const;
 		bool	isDouble() const;
+		bool	isSpecialLiteral()const;
 		void	parseInput();
 
 		void	scalarConverter();
@@ -47,6 +49,7 @@ class ScalarConverter
 		void printDouble()const;
 };
 
+int 	countDots(const std::string& str);
 std::ostream&   operator<<(std::ostream& out, const ScalarConverter& ScalarConverter);
 
 #endif
