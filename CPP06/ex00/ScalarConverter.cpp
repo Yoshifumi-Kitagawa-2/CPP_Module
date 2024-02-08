@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 16:08:56 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/02/09 01:03:40 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/02/09 01:52:54 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,12 @@ bool ScalarConverter::isChar()const
 
 bool ScalarConverter::isInt()const
 {
-	int i = 0;
+	std::string::size_type i = 0;
 	while (std::isspace(input_[i]))
 		i++;
 	if (input_[i] == '-' || input_[i] == '+')
 		i++;
-	for (; i < input_.length() ; i++)
+	for (; i < input_.length() ; ++i)
 	{
 		if (!isdigit(input_[i]))
 			return (false);
@@ -69,7 +69,8 @@ bool ScalarConverter::isInt()const
 
 int countDots(const std::string& str) {
     int dotCount = 0;
-    for (char ch : str) {
+    for (std::string::size_type i = 0; i < str.length(); ++i) {
+		char ch = str[i];
         if (ch == '.') {
             dotCount++;
         }
@@ -85,12 +86,12 @@ bool ScalarConverter::isFloat()const
 		return (false);
 	if (input_[0] == '.' || input_[input_.length() - 1] == '.')
 		return (false);
-	int i = 0;
+	std::string::size_type i = 0;
 	while (std::isspace(input_[i]))
 		i++;
 	if (input_[i] == '-' || input_[i] == '+')
 		i++;
-	for (; i < input_.length() - 1 ; i++)
+	for (; i < input_.length() - 1 ; ++i)
 	{
 		if (!isdigit(input_[i]) && input_[i] != '.')
 			return (false);
@@ -104,12 +105,12 @@ bool ScalarConverter::isDouble()const
 		return (false);
 	if (input_[0] == '.' || input_[input_.length() - 1] == '.')
 		return (false);
-	int i = 0;
+	std::string::size_type i = 0;
 	while (std::isspace(input_[i]))
 		i++;
 	if (input_[i] == '-' || input_[i] == '+')
 		i++;
-	for (; i < input_.length() - 1 ; i++)
+	for (; i < input_.length() - 1 ; ++i)
 	{
 		if (!isdigit(input_[i]) && input_[i] != '.')
 			return (false);
@@ -120,7 +121,7 @@ bool ScalarConverter::isDouble()const
 bool ScalarConverter::isSpecialLiteral()const
 {
 	const std::string specialLiteral[6] = {"nan", "nanf", "+inf", "-inf", "+inff", "-inff"};
-	for (int i = 0; i < 6; i++)
+	for (int i = 0; i < 6; ++i)
 	{
 		if (input_ == specialLiteral[i])
 			return (true);
@@ -131,7 +132,7 @@ bool ScalarConverter::isSpecialLiteral()const
 void ScalarConverter::parseInput()
 {
 	bool (ScalarConverter::*functions[5])() const = {&ScalarConverter::isChar, &ScalarConverter::isInt, &ScalarConverter::isFloat, &ScalarConverter::isDouble, &ScalarConverter::isSpecialLiteral};
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 5; ++i)
 	{
 		if ((this->*functions[i])() == true)
 			type_ = i;
@@ -184,7 +185,8 @@ void ScalarConverter::printInt() const
 {
 	if (type_ == 4)
 		std::cout << "impossible" << std::endl;
-	std::cout << int_ << std::endl;
+	else
+		std::cout << int_ << std::endl;
 }
 
 void ScalarConverter::printFloat() const
@@ -192,8 +194,9 @@ void ScalarConverter::printFloat() const
 	if (input_.compare("nanf") == 0 || input_.compare("nan") == 0)
 		std::cout << "nanf" << std::endl;
 	else if (input_.compare("+inff") == 0 || input_.compare("+inf") == 0 || input_.compare("-inff") == 0 || input_.compare("-inf") == 0)
-		std::cout << input_ << std::endl; 
-	std::cout << float_ << std::endl;
+		std::cout << input_ << std::endl;
+	else
+		std::cout << float_ << std::endl;
 }
 
 void ScalarConverter::printDouble() const
@@ -202,7 +205,8 @@ void ScalarConverter::printDouble() const
 		std::cout << "nan" << std::endl;
 	else if (input_.compare("+inff") == 0 || input_.compare("+inf") == 0 || input_.compare("-inff") == 0 || input_.compare("-inf") == 0)
 		std::cout << input_ << std::endl;
-	std::cout << double_ << std::endl;
+	else
+		std::cout << double_ << std::endl;
 }
 
 std::ostream &operator<<(std::ostream &out, const ScalarConverter &right)

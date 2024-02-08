@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 16:08:58 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/02/09 00:48:35 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/02/09 01:47:38 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class ScalarConverter
 		int		int_;
 		float	float_;
 		double	double_;
-		bool	impossible_;
+		//bool	impossible_;
 
 		int 	type_;
 
