@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 16:08:58 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/02/09 01:47:38 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/02/10 18:38:50 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <string>
 #include <iostream>
+#include <limits>
 class ScalarConverter
 {
 	private:
@@ -23,7 +24,7 @@ class ScalarConverter
 		int		int_;
 		float	float_;
 		double	double_;
-		//bool	impossible_;
+		bool	somethingFailed_;
 
 		int 	type_;
 
@@ -47,6 +48,7 @@ class ScalarConverter
 		void printInt()const;
 		void printFloat()const;
 		void printDouble()const;
+		int	 getType()const;
 };
 
 int 	countDots(const std::string& str);
