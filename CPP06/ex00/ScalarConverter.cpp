@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 16:08:56 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/02/11 10:17:32 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/02/11 10:35:19 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,6 @@ float ScalarConverter::float_;
 double ScalarConverter::double_;
 bool ScalarConverter::somethingFailed_;
 int ScalarConverter::type_;
-
-ScalarConverter::ScalarConverter()
-{
-}
-
-ScalarConverter::~ScalarConverter()
-{
-}
 
 bool ScalarConverter::isChar()
 {
@@ -203,7 +195,7 @@ void ScalarConverter::printFloat()
 	else if (input_.compare("-inff") == 0)
 		std::cout << "float: -inf" << std::endl;
 	else{
-		if (float_ - static_cast<int>(float_) == 0)
+		if (float_ - roundf(float_) == 0)
 			std::cout << "float: " << float_ << ".0f" << std::endl;
 		else
 			std::cout << "float: " << float_ << "f" << std::endl;
@@ -223,7 +215,7 @@ void ScalarConverter::printDouble()
 	else if (input_.compare("-inf") == 0)
 		std::cout << "double: -inff" << std::endl;
 	else{
-		if (double_ - static_cast<int>(double_) == 0)
+		if (double_ - round(double_) == 0)
 			std::cout << "double: " << double_ << ".0" << std::endl;
 		else
 			std::cout << "double: " << double_ << std::endl;
