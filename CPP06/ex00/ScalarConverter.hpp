@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 16:08:58 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/02/10 18:38:50 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/02/11 10:12:58 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,42 +16,45 @@
 #include <string>
 #include <iostream>
 #include <limits>
+
+//todo 関数はstaticにする。あとは基本privateにする。convertだけpublicにする。
 class ScalarConverter
 {
 	private:
-		std::string input_;
-		char	char_;
-		int		int_;
-		float	float_;
-		double	double_;
-		bool	somethingFailed_;
+		static std::string	input_;
+		static char			char_;
+		static int			int_;
+		static float		float_;
+		static double		double_;
+		static bool			somethingFailed_;
 
-		int 	type_;
+		static int 			type_;
 
-		bool	isChar() const;
-		bool 	isInt() const;
-		bool	isFloat() const;
-		bool	isDouble() const;
-		bool	isSpecialLiteral()const;
-		void	parseInput();
+		static int 			countDots();
+		static bool 		isChar();
+		static bool 		isInt();
+		static bool 		isFloat();
+		static bool 		isDouble();
+		static bool 		isSpecialLiteral();
+		static void 		parseInput();
 
-		void	scalarConverter();
+		static void 		staticCast();
+		
+		static void 		printChar();
+		static void 		printInt();
+		static void 		printFloat();
+		static void 		printDouble();
+		static void 		printAll();
+		
+		static void 		setInput(const std::string& input);
+		static int			getType();
 		
 		ScalarConverter();
-	public:
-		ScalarConverter(std::string input);
 		ScalarConverter(const ScalarConverter &src);
 		ScalarConverter &operator=(const ScalarConverter &right);
 		~ScalarConverter();
-
-		void printChar()const;
-		void printInt()const;
-		void printFloat()const;
-		void printDouble()const;
-		int	 getType()const;
+	public:
+		static void			scalarConverter(const std::string& input);
 };
-
-int 	countDots(const std::string& str);
-std::ostream&   operator<<(std::ostream& out, const ScalarConverter& ScalarConverter);
 
 #endif
