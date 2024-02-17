@@ -6,7 +6,13 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 15:02:40 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/02/12 15:02:40 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/02/12 18:59:38 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "easyfind.hpp"
+
+int main()
+{
+	return (0);
+}

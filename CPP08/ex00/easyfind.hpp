@@ -6,7 +6,13 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 15:03:03 by yokitaga          #+#    #+#             */
-/*   Updated: 2024/02/12 15:03:04 by yokitaga         ###   ########.fr       */
+/*   Updated: 2024/02/12 18:59:20 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef EASYFIND_HPP
+#define EASYFIND_HPP
+
+
+
+#endif
